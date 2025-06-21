@@ -61,14 +61,15 @@ DB_USER=sa
 DB_PASSWORD=YourStrongP@ssw0rd
 
 
-###3. Start SQL Server (if using Docker)
+### 3. Start SQL Server (if using Docker)
 
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrongP@ssw0rd' \
    -p 1433:1433 --name sqlserver \
    -d mcr.microsoft.com/mssql/server:2022-latest
 
+---
 
-##🚀 Usage
+## 🚀 Usage
 python auditor.py --input data.xlsx --table customer_data --output audit_report.xlsx --dry-run
 CLI Options
 Option	Description
@@ -76,6 +77,8 @@ Option	Description
 --table	SQL Server table name
 --output	Output Excel report path
 --dry-run	Only preview changes, no database updates
+
+---
 
 ## Output Example
 
@@ -89,7 +92,8 @@ Sheet 3: Changed Rows
 
 Color-coded formatting helps highlight exact differences in cell values.
 
+---
 
-🛡️ License
+# 🛡️ License
 This project is licensed under the MIT License.
 
