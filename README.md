@@ -43,7 +43,7 @@ excel_sql_auditor/
 
 ### 1. Clone the Repo & Set Up Environment
 
-```bash
+
 git clone https://github.com/pravallikanomula/ExcelSQLAuditor.git
 cd ExcelSQLAuditor
 python3 -m venv venv
@@ -51,7 +51,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 
-2. Configure Environment Variables
+### 2. Configure Environment Variables
 Create a .env file in the root directory:
 
 DB_DRIVER={ODBC Driver 17 for SQL Server}
@@ -59,15 +59,16 @@ DB_SERVER=localhost,1433
 DB_DATABASE=your_database
 DB_USER=sa
 DB_PASSWORD=YourStrongP@ssw0rd
-3. Start SQL Server (if using Docker)
-bash
-Copy code
+
+
+###3. Start SQL Server (if using Docker)
+
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrongP@ssw0rd' \
    -p 1433:1433 --name sqlserver \
    -d mcr.microsoft.com/mssql/server:2022-latest
 
 
-#🚀 Usage
+##🚀 Usage
 python auditor.py --input data.xlsx --table customer_data --output audit_report.xlsx --dry-run
 CLI Options
 Option	Description
@@ -88,13 +89,6 @@ Sheet 3: Changed Rows
 
 Color-coded formatting helps highlight exact differences in cell values.
 
-📌 Future Enhancements
-
-GUI for file selection and report preview (Tkinter or PyQt)
-
-Email audit reports automatically
-
-Multi-table batch comparison
 
 🛡️ License
 This project is licensed under the MIT License.
